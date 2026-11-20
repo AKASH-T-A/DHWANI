@@ -1,0 +1,1233 @@
+# MASTER BUILD PROMPT — DHWANI
+## AI-Powered Disaster Emergency Response Coordination System
+
+Act as a senior full-stack engineer, AI/ML architect, product designer, geospatial engineer, and disaster-management technology specialist.
+
+Build a complete, highly interactive, professional-grade prototype of **DHWANI**, an AI-powered disaster emergency response coordination platform.
+
+This is a hackathon prototype intended to demonstrate the complete project vision to judges, technical experts, disaster management authorities, and potential partners.
+
+Do not build a simple landing page or static dashboard. Build a working application with interconnected modules, functional buttons, realistic workflows, data visualizations, AI-powered processing, and a complete simulated disaster demonstration.
+
+Use the attached DHWANI project presentation as the primary source of truth.
+
+---
+
+# 1. PROJECT IDENTITY
+
+Project Name: DHWANI
+
+Tagline: Every voice heard — even the silent ones.
+
+Core philosophy:
+
+"Disaster reports are a biased sample of need. DHWANI corrects the bias, asks for what's missing, and keeps working when the network fails."
+
+DHWANI means Voice.
+
+The central problem:
+
+The number of emergency messages received from an area does not necessarily represent the actual number of people who need help.
+
+A highly connected city might send 50 reports, whereas a remote village with poor network connectivity might send only one report or no report at all.
+
+Traditional systems prioritize the areas producing the most messages.
+
+DHWANI estimates actual human need by correcting reporting bias and detecting potentially endangered villages that have stopped communicating.
+
+## Core innovation
+
+DHWANI is not just another disaster monitoring dashboard.
+
+It is an intelligent disaster triage and coordination platform that:
+
+1. Collects emergency signals from multiple sources.
+2. Understands multilingual emergency messages.
+3. Identifies incidents and geographical locations.
+4. Merges duplicate reports and evaluates evidence.
+5. Estimates actual human need instead of message volume.
+6. Identifies silent, potentially high-risk villages.
+7. Automatically asks victims for missing information.
+8. Provides explainable rescue priorities.
+9. Keeps human coordinators in control.
+10. Continues operating during internet failures.
+
+---
+
+# 2. PRODUCT DESIGN AND USER EXPERIENCE
+
+Create a sophisticated emergency operations platform.
+
+Visual direction:
+
+- Professional disaster-management command center.
+- Modern government-grade emergency response software.
+- Dark navy / charcoal interface.
+- Subtle orange and red emergency indicators.
+- Cyan and blue accents for information.
+- Green for verified or resolved information.
+- Clean typography and excellent spacing.
+- Beautiful interactive maps.
+- Premium charts and data visualizations.
+- Smooth but restrained animations.
+- Responsive design for desktop, tablet, and mobile.
+
+Avoid:
+- Generic admin dashboard templates.
+- Excessive gradients.
+- Unnecessary glassmorphism.
+- Excessive glowing effects.
+- Overcrowded screens.
+- Decorative elements that reduce readability.
+- Non-functional buttons.
+
+The application must look like software that could realistically be used by a district disaster management control room.
+
+Use a consistent design system throughout.
+
+Create a professional logo for DHWANI featuring a voice/signal-wave concept integrated with a location or emergency-response symbol.
+
+The application must have a persistent sidebar, top status bar, notification center, and user profile area.
+
+---
+
+# 3. APPLICATION NAVIGATION
+
+Create the following main navigation modules:
+
+1. Command Center
+2. Live Incident Feed
+3. Incident Intelligence
+4. Silence Radar
+5. Active Triage
+6. Evidence & Verification
+7. Geospatial Operations
+8. Rescue Coordination
+9. Analytics & Reports
+10. System Health
+11. Settings
+
+Every navigation item must open a fully developed functional page.
+
+The dashboard must have a prominent DEMO MODE indicator whenever simulated disaster data is being used.
+
+Include a global disaster scenario selector.
+
+Initial scenario:
+
+Netravati River Flood — Coastal Karnataka.
+
+---
+
+# 4. COMMAND CENTER
+
+This is the main landing page after login.
+
+Build an operational command center with the following sections.
+
+## A. Emergency overview cards
+
+Display:
+
+- Total reports received.
+- Unique incidents identified.
+- High-priority incidents.
+- Critical incidents.
+- Potentially silent high-risk villages.
+- Pending follow-up questions.
+- Reports awaiting verification.
+- Rescue tasks in progress.
+
+Use realistic data from the provided demo scenario.
+
+## B. Live incident activity
+
+Create a live-updating incident feed.
+
+Each incident should show:
+
+- Incident ID.
+- Received time.
+- Location.
+- Hazard type.
+- Source.
+- Language.
+- Number of affected people, if known.
+- Vulnerable persons.
+- Need score.
+- Confidence.
+- Verification status.
+
+Add filtering by severity, location, source, language, and status.
+
+## C. Emergency map
+
+Create an interactive map of the Netravati flood region.
+
+Show:
+
+- Incident markers.
+- Critical emergency zones.
+- Uncertain location polygons.
+- Dark Zones.
+- Rescue team positions.
+- Road closures.
+- River monitoring points.
+- Relief centers.
+
+Use MapLibre or an appropriate mapping library.
+
+Where live map tiles are unavailable, provide a clearly labeled schematic map fallback.
+
+Never present estimated or simulated coordinates as verified GPS locations.
+
+## D. Emergency priority panel
+
+Display the highest-priority incidents, sorted by need score rather than message volume.
+
+Highlight the reasons behind the priority.
+
+## E. System activity
+
+Display:
+- Latest AI processing events.
+- New incident detections.
+- Duplicate merges.
+- Verification results.
+- Follow-up responses.
+- Coordinator actions.
+
+---
+
+# 5. LIVE INCIDENT INTAKE
+
+Create a complete incident intake module.
+
+The system must support the following input channels:
+
+1. SMS
+2. Missed-call IVR
+3. WhatsApp text
+4. WhatsApp voice notes
+5. WhatsApp photos
+6. Telegram
+7. Emergency call transcripts
+8. Social media reports
+9. Rainfall sensors
+10. River gauge sensors
+11. Volunteer Progressive Web App
+
+Create an interface where a coordinator can manually submit a new emergency report.
+
+Input fields:
+
+- Message text.
+- Source channel.
+- Language.
+- Location or landmark.
+- Number of affected people.
+- Hazard type.
+- Vulnerable persons.
+- Optional image attachment.
+
+Provide an AI PROCESS REPORT button.
+
+On clicking it, the system should:
+
+1. Detect the language.
+2. Translate when necessary.
+3. Extract the emergency type.
+4. Extract the affected population.
+5. Identify vulnerable people.
+6. Extract landmarks.
+7. Estimate location confidence.
+8. Identify missing details.
+9. Generate a structured incident record.
+10. Assign an initial confidence score.
+
+Create a structured JSON representation internally for every processed report.
+
+Include a processing explanation showing how the raw message becomes an incident.
+
+Important:
+
+Use Gemini through a secure server-side integration when an API key is available.
+
+Do not expose API keys in frontend code.
+
+If Gemini is unavailable, use a clearly identified local rule-based fallback.
+
+Never pretend that a real external communication channel has been connected.
+
+---
+
+# 6. MULTILINGUAL AI INTELLIGENCE
+
+DHWANI must support:
+
+- Kannada
+- Tulu
+- Malayalam
+- Konkani
+- Hindi
+- English
+- Code-mixed messages
+
+Create a multilingual interface for processing emergency reports.
+
+Example input:
+
+"Uppinangady devasthana hinde neeru bandide, mane mele 4 jana, ajji ide."
+
+Expected understanding:
+
+- Hazard: Flooding.
+- Location description: Behind Uppinangady temple.
+- People affected: Four people.
+- Vulnerable persons: Elderly woman.
+- Emergency: People stranded on a rooftop.
+- Missing information: Exact location, water level, injuries.
+
+Display original message and translated interpretation side by side.
+
+Show confidence for each extracted field.
+
+Do not fabricate a precise location when only a landmark is available.
+
+Represent uncertain locations using approximate geographical zones and confidence levels.
+
+Use Gemini for language understanding where available.
+
+Keep the architecture compatible with IndicWhisper, Bhashini, and IndicTrans2 integrations in future development.
+
+---
+
+# 7. INCIDENT INTELLIGENCE AND GEO-RESOLUTION
+
+Build an incident intelligence page.
+
+Features:
+
+- Extract incident information.
+- Identify hazard categories.
+- Extract landmarks.
+- Identify affected populations.
+- Identify vulnerable groups.
+- Determine missing information.
+- Estimate location confidence.
+- Display geographical uncertainty zones.
+
+Support these incident categories:
+
+- Flood
+- Landslide
+- Building collapse
+- Road blockage
+- People trapped
+- Medical emergency
+- Missing persons
+- Infrastructure damage
+- Other emergency
+
+Create a location resolver interface.
+
+For vague reports such as:
+
+"Behind the temple near the old bridge."
+
+Display:
+- Possible geographical area.
+- Landmark matching.
+- Location confidence.
+- Whether GPS coordinates are available.
+- Information still required.
+
+The map must visually distinguish:
+- Verified location.
+- Approximate location.
+- Uncertain location.
+
+---
+
+# 8. EVIDENCE GRAPH AND RUMOUR DEFENCE
+
+Create a dedicated Evidence & Verification module.
+
+This is one of the major innovations of DHWANI.
+
+The system must identify duplicate reports using:
+
+- Similarity of message meaning.
+- Geographical proximity.
+- Time proximity.
+- Source relationships.
+- Forward chains.
+- Image similarity.
+
+Create a visual evidence graph.
+
+Example:
+
+Report A → Report B → Forwarded Report C.
+
+Show that all three may originate from one underlying incident.
+
+The system should merge duplicate reports into one incident rather than counting every message separately.
+
+## Rumour detection
+
+Build mechanisms for:
+
+1. Duplicate message detection.
+2. Forward-chain detection.
+3. Recycled image detection.
+4. Conflicting information detection.
+5. Sensor corroboration.
+6. Independent source verification.
+
+For image reuse detection, design an image hashing integration compatible with perceptual hashing.
+
+Do not claim an image is fake merely because it is old or duplicated.
+
+Show statuses:
+
+- Unverified.
+- Corroborated.
+- Conflicting evidence.
+- Potentially recycled image.
+- Verified by coordinator.
+
+Create a detailed evidence panel showing why an incident is considered reliable or suspicious.
+
+---
+
+# 9. NEED ESTIMATOR — CORE INNOVATION
+
+This is the most important analytical component.
+
+Traditional systems rank the number of messages.
+
+DHWANI estimates actual need.
+
+Implement a transparent, adjustable reporting-bias correction model.
+
+Conceptual formula:
+
+Need Estimate = Reports / Expected Reporting Rate
+
+Expected reporting rate must account for:
+
+- Population.
+- Network coverage.
+- Language accessibility.
+- Literacy and communication accessibility.
+- Historical reporting patterns, when available.
+
+For the prototype, implement a clearly documented simplified model.
+
+Do not treat the simple formula as a complete Bayesian model.
+
+Create a Need Estimator interface showing:
+
+- Raw report count.
+- Estimated reporting rate.
+- Population context.
+- Connectivity context.
+- Bias-corrected need estimate.
+- Confidence interval or uncertainty indicator.
+- Final priority score.
+
+Use PyMC/Bayesian modelling as a future backend integration, or provide a clearly labeled simplified approximation in the prototype.
+
+## Example comparison
+
+City:
+- 50 reports.
+- Expected reporting rate: 100%.
+- Adjusted estimate: 50.
+
+Remote village:
+- 5 reports.
+- Expected reporting rate: 10%.
+- Adjusted estimate: 50.
+
+Explain visually why fewer reports do not necessarily mean fewer people need help.
+
+Build a comparison chart showing raw report volume versus bias-corrected need.
+
+The coordinator must be able to inspect how changing reporting rates changes the estimated need.
+
+---
+
+# 10. SILENCE RADAR
+
+This is DHWANI's signature innovation.
+
+Create a visually impressive, fully functional Silence Radar module.
+
+Its purpose is to identify villages that may be in danger but are not reporting emergencies.
+
+Example:
+
+A village normally sends 20 emergency reports during a major event.
+
+During a flood:
+- River level crosses a danger threshold.
+- Nearby roads are blocked.
+- Mobile connectivity decreases.
+- The village sends zero reports.
+
+DHWANI should flag the village as a potential Dark Zone.
+
+## Interface
+
+Display:
+
+- Map of affected villages.
+- Expected report activity.
+- Actual received reports.
+- Connectivity status.
+- Nearby river gauge status.
+- Rainfall status.
+- Historical reporting baseline.
+- Risk level.
+- Last communication time.
+
+Risk categories:
+
+- Low
+- Moderate
+- High
+- Critical
+
+Each Dark Zone must show a clear explanation.
+
+Example:
+
+"Potential high-risk village: no reports received despite rising river levels and degraded network connectivity."
+
+Provide actions:
+
+- Initiate IVR callback.
+- Send SMS request.
+- Contact local volunteer.
+- Request field verification.
+- Request drone assessment.
+
+These actions must generate visible workflow records in the prototype.
+
+Do not automatically declare a silent village to be affected. It is a risk indicator requiring verification.
+
+---
+
+# 11. ACTIVE TRIAGE — AI THAT ASKS BACK
+
+Build a fully interactive Active Triage module.
+
+This is another core innovation.
+
+When emergency information is incomplete, DHWANI should select the most useful follow-up question.
+
+Example:
+
+Initial message:
+
+"Water has entered our house."
+
+Possible missing information:
+
+- How high is the water?
+- How many people are inside?
+- Is anyone injured?
+- Are children or elderly people present?
+- Can people reach a safe location?
+
+DHWANI should select the question that provides the highest information value.
+
+Example:
+
+"Is the water above knee level? Reply 1 for YES, 2 for NO."
+
+Build the following interface:
+
+- Incident selection.
+- Missing information panel.
+- AI-suggested follow-up question.
+- Reason for selecting that question.
+- Communication channel selector.
+- Language selector.
+- Send button.
+- Simulated victim response.
+- Updated incident information.
+
+Support SMS and IVR workflow simulations.
+
+When a question is sent, update its status.
+
+Possible statuses:
+
+- Draft.
+- Sent.
+- Delivered (simulated).
+- Awaiting response.
+- Answer received (simulated).
+- Information updated.
+
+The system must visibly demonstrate how a response changes an incident's confidence and priority.
+
+Include a question history.
+
+Never claim that actual SMS or IVR messages were transmitted unless a real integration is configured.
+
+---
+
+# 12. GLASS-BOX AI AND HUMAN-IN-THE-LOOP
+
+Build an explainable AI interface.
+
+Every incident priority score must show:
+
+- Final score.
+- Contributing factors.
+- Positive and negative contributions.
+- Confidence.
+- Missing evidence.
+- What would change the score.
+
+Use the following simulated demo incident:
+
+Incident: Uppinangady temple area.
+
+Need score: 92/100.
+
+Score breakdown:
+
+- +31: People trapped on roof.
+- +18: Elderly person present.
+- +16: River rising.
+- +12: Four independent sources.
+- +15: Low-coverage area, after bias correction.
+
+Total: 92.
+
+Display the score as a clear visual breakdown.
+
+Show the explanation:
+
+"Would drop to priority #6 if the gauge stabilises and a second road opens."
+
+Provide coordinator controls:
+
+- Approve priority.
+- Override score.
+- Add override reason.
+- Merge incidents.
+- Split incidents.
+- Mark as verified.
+- Request additional evidence.
+
+Every action must create an audit log.
+
+Human coordinators must retain final authority over operational decisions.
+
+---
+
+# 13. GEOSPATIAL OPERATIONS
+
+Build a professional geographical operations interface.
+
+Include:
+
+- Flood zones.
+- Incident locations.
+- Dark Zones.
+- Rescue teams.
+- Road closures.
+- River gauges.
+- Rainfall stations.
+- Relief centers.
+- Approximate incident boundaries.
+
+Use different marker shapes and colors for different incident types.
+
+Provide map filters.
+
+Create a selected-incident information panel.
+
+Display route suggestions for rescue operations.
+
+Use OR-Tools-compatible routing architecture for future optimization.
+
+For the prototype, route suggestions must be explicitly identified as simulated unless a real routing service is connected.
+
+Do not claim that a route is safe without verified road and hazard information.
+
+---
+
+# 14. RESCUE COORDINATION
+
+Build a rescue operations module.
+
+Features:
+
+- Rescue team registry.
+- Available teams.
+- Assigned teams.
+- Pending rescue requests.
+- Resource allocation.
+- Road accessibility.
+- Assignment history.
+- Task status.
+
+Create realistic team records for the simulated demonstration.
+
+Each team should have:
+
+- Team ID.
+- Team type.
+- Current location.
+- Available resources.
+- Assigned incident.
+- Status.
+
+Example team types:
+
+- Boat rescue.
+- Medical response.
+- Fire and rescue.
+- SDRF/NDRF.
+- Local volunteers.
+
+Allow the coordinator to:
+
+1. Select an incident.
+2. View recommended resources.
+3. Select a rescue team.
+4. Assign the task.
+5. Update task status.
+6. Record completion.
+
+Task statuses:
+
+- Pending.
+- Assigned.
+- En route.
+- On site.
+- Completed.
+- Cancelled.
+
+Include a warning if the route passes through a reported hazard zone.
+
+All rescue dispatches must be simulated unless a real authorized integration exists.
+
+---
+
+# 15. ANALYTICS AND REPORTS
+
+Build a detailed analytics module.
+
+Include:
+
+- Incoming reports over time.
+- Incidents by hazard type.
+- Reports by language.
+- Reports by source.
+- Duplicate reduction.
+- Verification outcomes.
+- Need distribution.
+- Urban versus remote response attention.
+- Follow-up question effectiveness.
+- Rescue task completion.
+- Dark Zone detection history.
+
+Include date filters and geographical filters.
+
+Add a reporting-bias comparison chart:
+
+Raw message volume versus adjusted need.
+
+Add a performance metrics section.
+
+Display project targets separately from measured prototype performance.
+
+Targets from the project presentation:
+
+- Less than 10 seconds to structure, locate, and rank a report.
+- At least 60% reduction in duplicate workload.
+- Less than 1 km median error for landmark-only reports.
+- At most 1.2x remote versus urban time-to-attention ratio.
+
+Label these as TARGETS, not achieved results.
+
+Allow the coordinator to export a disaster incident report in CSV or PDF if supported.
+
+---
+
+# 16. SYSTEM HEALTH AND OFFLINE MODES
+
+This is a critical feature.
+
+DHWANI must demonstrate three operating modes.
+
+## TIER 2 — CLOUD MODE
+
+Full system operation.
+
+- Cloud AI.
+- Complete processing pipeline.
+- All configured communication channels.
+- Centralized database.
+- Live synchronization.
+
+## TIER 1 — EDGE LAPTOP MODE
+
+When internet connectivity is lost:
+
+- Switch to a local AI model such as quantized Llama or Qwen.
+- Use local storage.
+- Continue processing available reports.
+- Continue incident prioritization.
+- Continue local dashboard operations.
+
+## TIER 0 — SMS-ONLY MODE
+
+When connectivity is severely limited:
+
+- GSM modem architecture.
+- Keyword-based emergency extraction.
+- Rule-based prioritization.
+- Local incident logging.
+- Minimal communication.
+
+Create a prominent connectivity control in the top bar.
+
+Provide a DEMO NETWORK CONTROL:
+
+- Online.
+- Simulate internet failure.
+- Restore internet.
+
+When the user switches to offline mode:
+
+1. Change the system status.
+2. Display the active operating tier.
+3. Show which capabilities remain available.
+4. Disable unavailable external integrations.
+5. Preserve local incident records.
+6. Display synchronization status.
+
+Do not falsely claim that a real local Llama/Qwen model is running unless it has actually been configured.
+
+The demo must visually and functionally simulate tier transitions if real infrastructure is unavailable.
+
+---
+
+# 17. SIMULATED DISASTER DEMONSTRATION
+
+This section is extremely important for the hackathon presentation.
+
+Build a dedicated LIVE DEMO page.
+
+Scenario:
+
+"2:47 AM — Netravati River Flood, Coastal Karnataka."
+
+The demo must reproduce the scenario described in the DHWANI presentation.
+
+Use these exact scenario figures:
+
+- 1,200 messages received in 30 minutes.
+- Languages: Kannada, Tulu, Malayalam, English.
+- 38 unique incidents after fusion.
+- 6 rumours down-weighted.
+- 2 recycled photos down-weighted.
+- 3 potential Dark Zones detected.
+- 41 follow-up questions sent.
+- 12 locations improved through follow-up answers.
+
+These are simulated demonstration values, not real-world event data.
+
+## Build a scenario replay engine
+
+Provide controls:
+
+- Start Demo.
+- Pause.
+- Resume.
+- Reset.
+- Next Event.
+- Change Network Status.
+
+The demo must show events arriving progressively.
+
+Example sequence:
+
+EVENT 1:
+Incoming Kannada emergency message.
+
+EVENT 2:
+AI identifies flood and stranded people.
+
+EVENT 3:
+Location resolver identifies Uppinangady temple as a landmark.
+
+EVENT 4:
+Additional reports arrive from the same area.
+
+EVENT 5:
+Evidence graph merges duplicate reports.
+
+EVENT 6:
+Need estimator assigns a high priority.
+
+EVENT 7:
+Silence Radar identifies a village with no expected communication.
+
+EVENT 8:
+Active Triage sends a follow-up question.
+
+EVENT 9:
+Simulated victim response updates the incident.
+
+EVENT 10:
+Coordinator reviews the priority and approves a rescue assignment.
+
+EVENT 11:
+Internet is switched off.
+
+EVENT 12:
+DHWANI switches to edge mode and continues processing.
+
+Every event must update the relevant pages and dashboard components.
+
+Do not build an isolated animation that does not affect application state.
+
+Use a shared application state and event store so the demonstration is consistent across modules.
+
+---
+
+# 18. SAMPLE INCIDENT DATA
+
+Create a clearly labeled simulated dataset based on the Netravati flood demonstration.
+
+Use varied reports, not just identical examples.
+
+Examples:
+
+1. "Neeru mane olage bartha ide." — Kannada.
+2. "Uppinangady devasthana hinde neeru bandide." — Kannada.
+3. "Four people are stuck on the roof."
+4. "Road blocked near the bridge."
+5. "Water level is increasing rapidly."
+6. "There is an elderly woman in the house."
+7. "Landslide blocked the village road."
+8. "No mobile signal in our village."
+9. "A family needs medical assistance."
+10. "People are waiting on the first floor."
+
+Create realistic combinations of:
+
+- Emergency messages.
+- Duplicate messages.
+- Forwarded messages.
+- Conflicting reports.
+- Sensor alerts.
+- Missing locations.
+- Vulnerable-person information.
+- Low-connectivity reports.
+
+All generated reports must be marked as SIMULATED DEMO DATA.
+
+Never present generated examples as actual reports from disaster victims.
+
+---
+
+# 19. TECHNICAL ARCHITECTURE
+
+Build a modular architecture aligned with the project presentation.
+
+Preferred stack:
+
+Frontend:
+- React.
+- TypeScript.
+- Tailwind CSS.
+- Lucide icons.
+- Recharts.
+- MapLibre or equivalent mapping solution.
+
+AI:
+- Gemini API for language understanding and structured extraction.
+- Architecture compatible with IndicWhisper/Bhashini.
+- Architecture compatible with IndicTrans2.
+- Embedding-based similarity interface.
+- HDBSCAN-compatible clustering service.
+- Perceptual image hashing integration.
+- Explainable scoring engine.
+
+Backend:
+- Python.
+- FastAPI.
+- REST APIs.
+- WebSockets for live updates.
+
+Data:
+- PostgreSQL.
+- PostGIS.
+- pgvector.
+- Redis-compatible event/cache architecture.
+
+Event streaming:
+- Redpanda/Kafka-compatible design.
+
+Optimization:
+- OR-Tools-compatible routing service.
+
+Infrastructure:
+- Docker-ready modular structure.
+- Environment-variable-based configuration.
+
+Important implementation instruction:
+
+Use the stack supported by the Google AI Studio environment.
+
+If the environment cannot run Python/FastAPI or external infrastructure directly, build the working application using the available supported backend and create clean service interfaces for the intended integrations.
+
+Do not generate non-functional infrastructure just to claim that the architecture exists.
+
+Clearly separate:
+1. Fully implemented functionality.
+2. Simulated functionality.
+3. Integration-ready functionality.
+4. Future development.
+
+---
+
+# 20. DATA MODEL
+
+Design structured data entities for:
+
+- EmergencyReport.
+- Incident.
+- LocationEstimate.
+- EvidenceRecord.
+- Source.
+- DarkZone.
+- FollowUpQuestion.
+- FollowUpResponse.
+- NeedEstimate.
+- RescueTeam.
+- RescueTask.
+- SensorReading.
+- CoordinatorAction.
+- AuditLog.
+- SystemStatus.
+
+Every incident must have a unique ID.
+
+Store:
+- Original message.
+- Processed message.
+- Source.
+- Language.
+- Received timestamp.
+- Location.
+- Location confidence.
+- Hazard.
+- Affected population.
+- Vulnerable groups.
+- Evidence references.
+- Duplicate relationships.
+- Need score.
+- Priority.
+- Verification status.
+- Coordinator decision.
+
+Use persistent storage where available.
+
+If the application uses browser-local storage for the prototype, implement reliable persistence and explain the limitation.
+
+Do not lose the demo state when navigating between pages.
+
+---
+
+# 21. SECURITY AND RESPONSIBLE AI
+
+Implement:
+
+- Role-based access interface.
+- Coordinator authentication interface.
+- Secure API key handling.
+- Input validation.
+- Structured AI output validation.
+- Confidence thresholds.
+- Audit logging.
+- Personally identifiable information redaction.
+- Privacy-conscious data handling.
+
+When AI confidence is below 0.7, flag the information for human review.
+
+AI must never independently issue a real rescue dispatch.
+
+AI recommendations must be explainable.
+
+Uncertain location estimates must remain uncertain.
+
+Do not treat silence as proof of an emergency.
+
+Do not treat a recycled image as automatic proof of misinformation.
+
+Follow a privacy-conscious design informed by the Digital Personal Data Protection Act, 2023.
+
+---
+
+# 22. IMPORTANT UI COMPONENTS
+
+Create reusable components:
+
+- EmergencyMetricCard.
+- IncidentPriorityCard.
+- IncidentTable.
+- InteractiveMap.
+- NeedScoreBreakdown.
+- EvidenceGraph.
+- SilenceRadarMap.
+- FollowUpComposer.
+- LanguageBadge.
+- ConfidenceIndicator.
+- ConnectivityIndicator.
+- RescueTeamCard.
+- TimelineEvent.
+- AuditLogTable.
+- SystemHealthCard.
+- ScenarioReplayControls.
+
+All components must follow the same visual system.
+
+---
+
+# 23. FUNCTIONALITY REQUIREMENTS
+
+This is a functional prototype, not a visual mockup.
+
+Every important control must work.
+
+Examples:
+
+- Sidebar navigation must work.
+- Search must filter incidents.
+- Filters must update the data.
+- Incident cards must open details.
+- AI processing must return structured information.
+- Need scores must update.
+- Duplicate reports must be mergeable.
+- Silence Radar must respond to scenario data.
+- Follow-up questions must be creatable.
+- Simulated answers must update incidents.
+- Coordinator overrides must be recorded.
+- Rescue tasks must be assignable.
+- Network status must change operating modes.
+- Scenario replay must update the dashboard.
+- Analytics must use actual application data.
+- Reports must export where supported.
+
+Avoid placeholder buttons.
+
+Avoid dead-end pages.
+
+Avoid static charts that do not reflect application state.
+
+Create sensible empty states and error states.
+
+---
+
+# 24. DEVELOPMENT AND DELIVERY PRIORITIES
+
+Build in this order:
+
+Priority 1:
+- Professional application shell.
+- Command Center.
+- Incident intake.
+- Incident details.
+- Shared application state.
+
+Priority 2:
+- AI processing.
+- Multilingual understanding.
+- Location extraction.
+- Duplicate detection.
+- Evidence verification.
+
+Priority 3:
+- Need Estimator.
+- Silence Radar.
+- Active Triage.
+- Glass-box explainability.
+
+Priority 4:
+- Interactive map.
+- Rescue Coordination.
+- Analytics.
+- Audit logs.
+
+Priority 5:
+- Scenario Replay.
+- Offline-mode simulation.
+- Persistence.
+- Final UI polish.
+
+Do not stop after building the first dashboard.
+
+Continue implementing all modules until the full prototype works.
+
+---
+
+# 25. FINAL ACCEPTANCE CRITERIA
+
+The finished prototype must demonstrate the following complete workflow:
+
+1. A user submits an emergency report in Kannada.
+2. AI understands the report.
+3. The system extracts the hazard, people affected, and vulnerable persons.
+4. The location resolver identifies the landmark and uncertainty.
+5. Other similar reports arrive.
+6. Duplicate reports are merged.
+7. Evidence is evaluated.
+8. The need estimator calculates a bias-corrected score.
+9. Silence Radar identifies an at-risk silent village.
+10. Active Triage generates a useful follow-up question.
+11. A simulated victim responds.
+12. The incident is updated.
+13. The Glass-box panel explains the final score.
+14. A coordinator approves the incident.
+15. A rescue team is assigned.
+16. The network goes offline.
+17. DHWANI transitions to edge mode.
+18. The system continues operating using its available offline capabilities.
+
+The entire workflow must be demonstrable without requiring real disaster infrastructure.
+
+The final product must be visually polished, technically coherent, interactive, and presentation-ready.
+
+---
+
+# FINAL INSTRUCTION
+
+Think like an engineering team building a real emergency response coordination platform.
+
+Do not simplify DHWANI into a normal chatbot.
+
+Do not turn the entire application into a generic analytics dashboard.
+
+The heart of the product is:
+
+LISTEN → UNDERSTAND & LOCATE → FUSE & VERIFY → ESTIMATE NEED & ASK BACK → COORDINATE RESCUE.
+
+Build a complete operational prototype that makes these innovations obvious to anyone using it.
+
+The most important message of DHWANI must be visible throughout the application:
+
+"Reports are not need. Even silence can be a signal."
+
+Start building the application now. First establish the application architecture and shared state, then implement the complete working experience. Do not finish with a plan or a wireframe; deliver the actual application.
